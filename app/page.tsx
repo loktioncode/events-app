@@ -1,19 +1,17 @@
-import Image from 'next/image'
-import Search from '../components/searchInput';
-import Events from '../components/events';
-import BandInfo from '../components/bandInfo';
+'use client'
+import { Provider } from 'react-redux';
+import { store } from '@/redux-config/store';
+import Home from './home';
 
 
-export default function Home() {
+export default function IndexPage() {
 
 
   return (
     <main className="flex max-h-screen flex-row items-center justify-between p-8">
-      <div className="flex flex-col">
-        <Search placeholder="Search events..." />
-        <BandInfo />
-      </div >
-      <Events />
+      <Provider store={store}>
+        <Home />
+      </Provider>
     </main>
   )
 }

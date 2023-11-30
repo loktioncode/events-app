@@ -1,3 +1,4 @@
+'use client';
 import {
     Card,
     CardContent,
@@ -8,22 +9,20 @@ import {
 } from "@/components/ui/card"
 
 
-export default function AllEvents() {
-
-
+export default function AllEvents(props: any) {
+    console.log(">all events>",props.all_events)
 
     return (
-        <div className="grid grid-cols-3 gap-4">
-            {
-                [1, 2, 3, 4, 5, 6, 6, 7, 8].map((event) => (
-
-                    <Card key={event}>
+        <div className="grid grid-cols-3 gap-4 w-full  pt-8">
+             {
+                props?.all_events?.map((event: any) => (
+                    <Card key={event?.id}>
                         <CardHeader>
                             <CardTitle>Card Title</CardTitle>
                             <CardDescription>Card Description</CardDescription>
                         </CardHeader>
                         <CardContent>
-                            <p> Event {event}</p>
+                            <p> Event {event?.name}</p>
                         </CardContent>
                         <CardFooter>
                             <p>Card Footer</p>
@@ -31,7 +30,7 @@ export default function AllEvents() {
                     </Card>
 
                 ))
-            }
+            } 
         </div>
 
     );

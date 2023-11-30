@@ -1,19 +1,7 @@
-import axios from "axios";
 
-const instance = axios.create({
-  baseURL: "https://rest.bandsintown.com",
-  headers: {
-    'Content-Type': 'application/json',
-    'Authorization': '123'
-},
-});
 
-export const artistsEventsAPI = async (artistname: string) => {
-  const { data } = await instance.get(`/artists/${artistname}/events`);
-  return data;
+export const getArtistsEvents = async (artist_name: string) => {
+  const data = await fetch(`https://rest.bandsintown.com/artists/${artist_name}/events?app_id=12345`);
+  return data.json();
 };
 
-export const eventsAPI = async () => {
-    const { data } = await instance.get("/artists/");
-    return data;
-  };

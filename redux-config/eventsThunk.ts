@@ -1,8 +1,8 @@
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { artistsEventsAPI } from "./services";
+import { getArtistsEvents } from "./services";
 
 interface EventsState {
-  all_events: any[];
+  all_events: [];
   loading: "done" | "pending";
   error: string;
 }
@@ -15,8 +15,8 @@ const initialState: EventsState = {
 
 export const fetchArtistsEvents = createAsyncThunk(
   "events/fetchArtistsEvents",
-  async () => {
-    const res = await artistsEventsAPI("");
+  async (artistname: string) => {
+    const res = await getArtistsEvents(artistname);
     return res;
   }
 );
