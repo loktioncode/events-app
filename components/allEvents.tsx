@@ -14,13 +14,12 @@ export default function AllEvents(props: any) {
 
 
     return (
-        <div className="grid grid-cols-3 gap-4 w-full pt-8 ">
+        <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4 w-full relative" style={{ overflowY: 'auto', maxHeight: '100vh' }}>
             {
                 props?.all_events?.map((event: any) => (
                     <EventCard key={event?.id} event={event} selectedEvent={props?.selectedEvent} />
                 ))
             }
         </div>
-
     );
 }

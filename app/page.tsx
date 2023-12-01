@@ -8,7 +8,7 @@ export default function IndexPage() {
 
 
   return (
-    <main className="flex max-h-screen flex-row items-center justify-between p-8">
+    <main >
       <Provider store={store}>
         <Home />
       </Provider>
