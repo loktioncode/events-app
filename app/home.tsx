@@ -13,10 +13,13 @@ export default function Home() {
     const { all_events } = useAppSelector((state) => state.events)
 
     return (
-         <div className="flex flex-col md:flex-row items-center justify-between p-8">
+        <div className="flex flex-col md:flex-row items-center justify-between p-8">
             <div className="flex flex-col w-full md:w-4/12 sticky top-0 ">
+                <p className='text-lg font-bold' >
+                    Search Artist
+                </p>
                 <Search placeholder="Enter Artist Name" />
-                <BandInfo all_events={all_events}  />
+                <BandInfo all_events={all_events} />
             </div>
             <div className="w-full mt-4 md:mt-0">
                 <Events />
