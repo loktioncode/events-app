@@ -13,6 +13,7 @@ export default function Events() {
     const { all_events, loading, error } = useAppSelector((state) => state.events)
     const [selectedEvent, setSelectedEvent] = useState<any>(null);
 
+    
     const onSelectedEvent = (event: any) => {
         setSelectedEvent(event);
     }
@@ -23,7 +24,7 @@ export default function Events() {
 
     return (
         <Tabs defaultValue="all" className="md:m-8 md:w-8/12 w-10/12" style={{ position: 'fixed', top: 0, zIndex: 1 }}>
-            <TabsList className='w-full mt-[26%] md:mt-0' >
+            <TabsList className='md:w-full w-full mt-[24%] md:mt-0' >
                 <TabsTrigger value="all" className='w-full'>Upcoming Events</TabsTrigger>
                 <TabsTrigger value="favorites" className='w-full'>Favorite Events</TabsTrigger>
             </TabsList>
