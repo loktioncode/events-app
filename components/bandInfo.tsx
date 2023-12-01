@@ -12,7 +12,7 @@ export default function BandInfo(props: any) {
     if (all_events.length === 0) {
         return <div className="justify-center items-center p-8 flex-col hidden md:flex" >
             <Loader />
-            <p className="pt-4 text-lg">Please select an artist</p>
+            <p className="pt-4 text-lg hidden lg:flex">Please select an artist</p>
         </div>
     }
 
