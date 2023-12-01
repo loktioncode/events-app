@@ -7,30 +7,18 @@ import {
     CardHeader,
     CardTitle,
 } from "@/components/ui/card"
+import EventCard from "./eventCard";
 
 
-export default function FavoriteEvents() {
+export default function FavoriteEvents(props: any) {
 
-
+    const bookmarkedEvents = JSON.parse(localStorage.getItem('bookmarkedEvents') || '[]');
 
     return (
-        <div  className="grid grid-cols-3 gap-4">
+        <div className="grid grid-cols-3 gap-4">
             {
-                [1, 2, 3, 4, 5, 6, 6, 7, 8].map((event) => (
-
-                    <Card key={event}>
-                        <CardHeader>
-                            <CardTitle>Card Title</CardTitle>
-                            <CardDescription>Card Description</CardDescription>
-                        </CardHeader>
-                        <CardContent>
-                            <p> Event {event}</p>
-                        </CardContent>
-                        <CardFooter>
-                            <p>Card Footer</p>
-                        </CardFooter>
-                    </Card>
-
+                bookmarkedEvents.map((event: any) => (
+                    <EventCard key={event?.id} event={event} selectedEvent={props?.selectedEvent} />
                 ))
             }
         </div>

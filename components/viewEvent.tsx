@@ -1,6 +1,6 @@
 import React from 'react'
 import { Button } from './ui/button';
-import { ArrowBigLeftDashIcon, ArrowLeftIcon } from 'lucide-react';
+import { ArrowBigLeftDashIcon, ArrowLeftIcon, HeartIcon } from 'lucide-react';
 import {
     Card,
     CardContent,
@@ -10,17 +10,13 @@ import {
     CardTitle,
 } from "@/components/ui/card"
 import Link from 'next/link';
+import { bookmarkEvent, isBookmarked } from '@/lib/utils';
+import { useRouter } from "next/router";
 export default function viewEvent(props: any) {
     const { eventData, back } = props;
 
-    if (!eventData) {
-        return (
-            <div>no data</div>
-        )
-    }
     return (
         <>
-
             <Card className="hover:shadow-2xl" >
                 <CardHeader className="bg-blue-600 text-white mb-4 " >
                     <CardTitle className="text-2xl">
@@ -47,6 +43,9 @@ export default function viewEvent(props: any) {
                                 </CardDescription>
 
                             </div>
+                            <Button onClick={() => {bookmarkEvent(eventData)}} size={"icon"} variant={"ghost"} >
+                                <HeartIcon fill={isBookmarked(eventData) ? "red" : "transparent"} height={94} width={94}></HeartIcon>
+                            </Button>
                         </div>
                     </CardTitle>
                 </CardHeader>

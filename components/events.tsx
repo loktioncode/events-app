@@ -29,12 +29,12 @@ export default function Events() {
             </TabsList>
             <TabsContent value="all" className='' >
                 {
-                     (selectedEvent ? <ViewEvent eventData={selectedEvent} back={back} /> : <AllEvents all_events={all_events} selectedEvent={onSelectedEvent} />) 
+                    (selectedEvent ? <ViewEvent eventData={selectedEvent} back={back} /> : <AllEvents all_events={all_events} selectedEvent={onSelectedEvent} />)
                 }
             </TabsContent>
             <TabsContent value="favorites">
                 {
-                    (loading === "done") && <FavoriteEvents />
+                    selectedEvent ? <ViewEvent eventData={selectedEvent} back={back} /> : <FavoriteEvents selectedEvent={onSelectedEvent} />
                 }
 
             </TabsContent>
