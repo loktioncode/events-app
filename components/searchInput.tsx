@@ -7,7 +7,7 @@ import { useEffect, useState } from 'react';
 export default function Search({ placeholder }: { placeholder: string }) {
 
     const dispatch = useAppDispatch();
-    const [search, setSearch] = useState('');
+    const [search, setSearch] = useState('L');
    
 
     useEffect(() => {
