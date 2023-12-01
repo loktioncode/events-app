@@ -23,10 +23,11 @@ export default function BandInfo(props: any) {
 
             <Image
                 src={all_events[0]?.artist?.image_url}
-                width={500}
-                height={300}
                 alt="Picture of the artist"
-                className="hidden lg:flex flex-shrink-0 object-cover h-64 rounded-sm sm:h-96 dark:bg-gray-500 aspect-square"
+                width={500}
+                height={100}
+                priority
+                className="hidden lg:flex flex-shrink-0 object-cover rounded-sm sm:h-96 dark:bg-gray-500 aspect-square"
             />
             <div>
                 <h2 className="text-2xl font-semibold  text-b pt-2">{all_events[0]?.artist?.name}</h2>

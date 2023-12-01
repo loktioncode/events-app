@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Loader() {
     return (
-        <div className="grid md:grid-cols-2 grid-cols-1 gap-4 w-full relative">
+        <div className="grid md:grid-cols-3 grid-cols-1 md:gap-4 gap-1 w-full pt-8 ">
 
             {[...Array(9)].map((_, i) => 4 + i * 2).map((item: any) => (
 

@@ -16,7 +16,7 @@ export default function Search({ placeholder }: { placeholder: string }) {
 
 
     return (
-        <div className="relative">
+        <div className="relative lg:mt-[2px]">
             <label htmlFor="search" className="sr-only text-black">
                 Search Artist
             </label>
