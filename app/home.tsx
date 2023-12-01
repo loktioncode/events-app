@@ -14,7 +14,7 @@ export default function Home() {
 
     return (
          <div className="flex flex-col md:flex-row items-center justify-between p-8">
-            <div className="flex flex-col w-full md:w-4/12 sticky top-0">
+            <div className="flex flex-col w-full md:w-4/12 sticky top-0 ">
                 <Search placeholder="Enter Artist Name" />
                 <BandInfo all_events={all_events}  />
             </div>

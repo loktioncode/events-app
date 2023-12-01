@@ -19,7 +19,7 @@ export default function BandInfo(props: any) {
     return (
 
 
-        <div className="hidden md:flex flex-col max-w-md lg:p-6 dark:bg-gray-900 dark:text-gray-100">
+        <div className="hidden md:flex flex-col max-w-md lg:p-6 dark:bg-gray-900 dark:text-gray-100 mt-[2%]">
 
             <Image
                 src={all_events[0]?.artist?.image_url}
