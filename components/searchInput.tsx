@@ -7,11 +7,11 @@ import { useEffect, useState } from 'react';
 export default function Search({ placeholder }: { placeholder: string }) {
 
     const dispatch = useAppDispatch();
-    const [search, setSearch] = useState('L');
+    const [search, setSearch] = useState('');
    
 
     useEffect(() => {
-        dispatch(fetchArtistsEvents(search));
+        dispatch(fetchArtistsEvents(search.length > 0 ? search : 'L'));
     }, [dispatch, search]);
 
 
