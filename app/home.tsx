@@ -10,17 +10,13 @@ import { useAppSelector, useAppDispatch } from '@/hooks'
 
 export default function Home() {
 
-    const { all_events, loading, error } = useAppSelector((state) => state.events)
-
-    // if (loading !== "done") {
-    //     return <div>{error}</div>
-    // }
+    const { all_events } = useAppSelector((state) => state.events)
 
     return (
         <>
-            <div className="flex flex-col w-4/12">
+            <div className="flex flex-col w-4/12 overflow-auto sticky  mt-[1%] ">
                 <Search placeholder="Enter Artist Name" />
-                <BandInfo  all_events={all_events}/>
+                <BandInfo all_events={all_events} />
             </div >
             <div className="w-full" >
                 <Events />

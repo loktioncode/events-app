@@ -29,12 +29,12 @@ export default function BandInfo(props: any) {
                 className="flex-shrink-0 object-cover h-64 rounded-sm sm:h-96 dark:bg-gray-500 aspect-square"
             />
             <div>
-                <h2 className="text-2xl font-semibold py-2 text-b">{all_events[0]?.artist?.name}</h2>
+                <h2 className="text-2xl font-semibold  text-b pt-2">{all_events[0]?.artist?.name}</h2>
 
                 <div className="flex flex-wrap">
                     {
                         all_events[0]?.artist?.links.map((link: any) => (
-                            <a key={link.url} className=" py-2 " href={link.url} target="_blank"><Badge variant="outline" className="text-lg font-normal mx-2 text-blue-700 border-2 border-blue-700" >{link.type}</Badge></a>
+                            <a key={link.url} className=" py-2 " href={link.url} target="_blank"><Badge variant="outline" className="text-lg font-normal mx-1 text-blue-700 border-2 border-blue-700" >{link.type}</Badge></a>
                         ))
                     }
                 </div>
