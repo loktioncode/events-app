@@ -16,12 +16,12 @@ export default function Search({ placeholder }: { placeholder: string }) {
 
 
     return (
-        <div className="relative  w-full">
+        <div className="relative w-full ">
             <label htmlFor="search" className="sr-only text-black">
                 Search Artist
             </label>
             <input
-                className="peer block w-full rounded-md border border-gray-500 py-[9px] pl-10 text-sm outline-2 placeholder:text-black text-black"
+                className="peer block w-full rounded-md border border-gray-500 py-[9px] pl-10 text-sm outline-2 placeholder:text-gray-800 text-black"
                 placeholder={placeholder}
                 onChange={(e) => setSearch(e.target.value)}
                 value={search}

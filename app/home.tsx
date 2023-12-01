@@ -19,7 +19,7 @@ export default function Home() {
     return (
         <>
             <div className="flex flex-col w-4/12">
-                <Search placeholder="Search events..." />
+                <Search placeholder="Enter Artist Name" />
                 <BandInfo  all_events={all_events}/>
             </div >
             <div className="w-full" >
