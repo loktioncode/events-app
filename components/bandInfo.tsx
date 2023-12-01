@@ -12,6 +12,7 @@ export default function BandInfo(props: any) {
     if (all_events.length === 0) {
         return <div className="justify-center items-center p-8 flex-col hidden md:flex" >
             {loading === "loading" ? <Loader /> : null}
+            <p className="pt-4 text-lg hidden lg:flex">{loading === "loading" ? "Searching for events..." : "Artist not found!"}</p>
         </div>
     }
 
