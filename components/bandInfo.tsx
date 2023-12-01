@@ -6,18 +6,16 @@ import { Badge } from "@/components/ui/badge"
 import Loader from "./ui/loader";
 
 export default function BandInfo(props: any) {
-    const { all_events } = props;
+    const { all_events, loading } = props;
 
 
     if (all_events.length === 0) {
         return <div className="justify-center items-center p-8 flex-col hidden md:flex" >
-            <Loader />
-            <p className="pt-4 text-lg hidden lg:flex">searching artist...</p>
+            {loading === "loading" ? <Loader /> : null}
         </div>
     }
 
     return (
-
 
         <div className="hidden md:flex flex-col max-w-md lg:p-6 dark:bg-gray-900 dark:text-gray-100 mt-[2%]">
 

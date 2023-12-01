@@ -10,7 +10,7 @@ import { useAppSelector, useAppDispatch } from '@/hooks'
 
 export default function Home() {
 
-    const { all_events } = useAppSelector((state) => state.events)
+    const { all_events, loading } = useAppSelector((state) => state.events)
 
     return (
         <div className="flex flex-col md:flex-row items-center justify-between p-8">
@@ -19,7 +19,7 @@ export default function Home() {
                     Search Artist
                 </p>
                 <Search placeholder="Enter Artist Name" />
-                <BandInfo all_events={all_events} />
+                <BandInfo all_events={all_events} loader={loading} />
             </div>
             <div className="w-full mt-4 md:mt-0">
                 <Events />
